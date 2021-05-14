@@ -1,8 +1,9 @@
+import Layout from "../../components/Layout";
 const EventsPage = () => {
   return (
-    <div>
+    <Layout title="Events for musical,dj program">
       <h1>Events Page</h1>
-    </div>
+    </Layout>
   );
 };
 
