@@ -1,5 +1,5 @@
 import Head from "next/head";
-import style from "../styles/Layout.module.css";
+import style from "@/styles/Layout.module.css";
 import Footer from "./Footer";
 import Header from "./Header";
 
