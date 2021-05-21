@@ -1,10 +1,24 @@
+import EventItem from "@/components/EventItem";
 import Layout from "@/components/Layout";
-const EventsPage = () => {
+
+export default function EventsPage({ events }) {
+  console.log(events);
   return (
-    <Layout title="Events for musical,dj program">
-      <h1>Events Page</h1>
+    <Layout>
+      <h1>Upcomming Events</h1>
+      {events.length === 0 && <h1>No Events To Show</h1>}
+      {events.map((evt) => (
+        <EventItem key={evt.id} evt={evt} />
+      ))}
     </Layout>
   );
-};
+}
 
-export default EventsPage;
+export async function getStaticProps() {
+  const res = await fetch(`http://localhost:3000/api/events`);
+  const events = await res.json();
+  return {
+    props: { events },
+    revalidate: 1,
+  };
+}
