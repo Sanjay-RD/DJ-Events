@@ -4,7 +4,7 @@ import Layout from "@/components/Layout";
 import { AIP_URL } from "../config/index";
 
 export default function HomePage({ events }) {
-  console.log(events);
+  // console.log(events);
   return (
     <Layout>
       <h1>Upcomming Events</h1>
