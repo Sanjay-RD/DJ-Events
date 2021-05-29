@@ -2,7 +2,6 @@ import EventItem from "@/components/EventItem";
 import Layout from "@/components/Layout";
 
 export default function EventsPage({ events }) {
-  console.log(events);
   return (
     <Layout>
       <h1>Upcomming Events</h1>
@@ -15,7 +14,7 @@ export default function EventsPage({ events }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`http://localhost:3000/api/events`);
+  const res = await fetch(`http://localhost:1337/events`);
   const events = await res.json();
   return {
     props: { events },
